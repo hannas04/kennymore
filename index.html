@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KennyMoore Events | Wedding & Event Planner, Lagos</title>
+<meta name="description" content="KennyMoore Events – Wedding, social and corporate event planning & management in Lagos, Nigeria. Exclusive Events, Priceless Memories.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Courgette&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --olive:#a0ac6b;
+  --olive-dark:#86935a;
+  --beige:#cdb8a3;
+  --taupe:#a8927f;
+  --ink:#3b3836;
+  --text:#7d756e;
+  --cream:#faf7f2;
+  --white:#fff;
+  --script:'Courgette',cursive;
+  --head:'Playfair Display',Georgia,serif;
+  --body:'Cardo',Georgia,serif;
+  /* ===== REPLACE THESE WITH YOUR OWN PHOTOS: url('images/hero1.jpg') ===== */
+  --hero1:linear-gradient(135deg,#b9bcc0 0%,#8b6d5c 55%,#3a3a3c 100%);
+  --hero2:linear-gradient(135deg,#d8d2c6 0%,#9aa77a 55%,#4a5240 100%);
+  --hero3:linear-gradient(135deg,#cfc3d3 0%,#8c7390 55%,#3f3347 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--text);font-size:17px;line-height:1.75;background:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin-inline:auto}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);font-weight:600;line-height:1.2}
+h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+.script{font-family:var(--script);font-weight:400}
+
+/* ===== Preloader ===== */
+#preloader{position:fixed;inset:0;background:#fff;z-index:9999;display:grid;place-items:center;transition:opacity .7s,visibility .7s}
+#preloader.done{opacity:0;visibility:hidden}
+.heart{width:54px;height:54px;background:var(--olive);transform:rotate(45deg);position:relative;animation:beat 1s infinite}
+.heart::before,.heart::after{content:"";position:absolute;width:54px;height:54px;background:var(--olive);border-radius:50%}
+.heart::before{left:-27px}.heart::after{top:-27px}
+@keyframes beat{0%,100%{transform:rotate(45deg) scale(1)}50%{transform:rotate(45deg) scale(1.2)}}
+
+/* ===== Top header ===== */
+.topbar{background:#fff;padding:1.6rem 0 1.4rem}
+.top-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.info-box{display:flex;align-items:center;gap:1rem}
+.info-box.right{justify-content:flex-end}
+.info-box .txt{line-height:1.35}
+.info-box small{display:block;color:var(--taupe);font-size:1rem}
+.info-box b{font-weight:400;color:var(--olive);font-size:1.15rem}
+.info-box.right b{color:var(--ink)}
+.info-box.left{justify-content:flex-end;text-align:right}
+.circle{width:62px;height:62px;border-radius:50%;background:var(--olive);color:#fff;display:grid;place-items:center;font-size:1.7rem;flex-shrink:0;transition:.4s}
+.circle:hover{background:var(--ink);transform:rotate(360deg)}
+.logo{text-align:center;display:block}
+.logo .l1{font-family:var(--head);font-size:2.3rem;font-weight:700;color:var(--ink);line-height:1;letter-spacing:.01em}
+.logo .l1 i{font-weight:400;color:var(--taupe);font-style:italic}
+.logo svg{display:block;margin:.1rem auto;width:190px;height:26px}
+.logo .l2{font-size:.78rem;letter-spacing:.42em;text-transform:uppercase;color:var(--taupe);font-weight:700}
+
+/* ===== Nav bar ===== */
+.navbar{background-color:var(--beige);position:relative;z-index:200;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>");}
+.navbar.stuck{position:fixed;top:0;left:0;right:0;box-shadow:0 6px 24px rgba(0,0,0,.15);animation:drop .5s}
+@keyframes drop{from{transform:translateY(-100%)}to{transform:none}}
+.nav{display:flex;justify-content:center;gap:2.6rem;padding:1.35rem 0}
+.nav a{color:#fff;text-transform:uppercase;letter-spacing:.3em;font-weight:700;font-size:.92rem;position:relative;padding:.1rem 0;transition:.3s}
+.nav a::after{content:"";position:absolute;left:50%;bottom:-6px;width:0;height:2px;background:#fff;transition:.35s;transform:translateX(-50%)}
+.nav a:hover::after,.nav a.active::after{width:100%}
+.nav a:hover{opacity:.9}
+.burger{display:none;background:none;border:0;color:#fff;font-family:var(--body);font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:1.1rem 4%;cursor:pointer;width:100%;text-align:left;font-size:.95rem}
+.nav-placeholder{display:none}
+
+/* ===== Hero slider ===== */
+.hero{position:relative;height:min(82vh,780px);min-height:520px;overflow:hidden;background:#555}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.3s ease,visibility 1.3s}
+.slide.active{opacity:1;visibility:visible}
+.slide .bg{position:absolute;inset:-4%;background-size:cover;background-position:center;transform:scale(1.02)}
+.slide.active .bg{animation:kenburns 9s ease-out forwards}
+@keyframes kenburns{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+.slide:nth-child(1) .bg{background-image:var(--hero1)}
+.slide:nth-child(2) .bg{background-image:var(--hero2)}
+.slide:nth-child(3) .bg{background-image:var(--hero3)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.18),rgba(0,0,0,.05) 40%,rgba(0,0,0,.45))}
+.caption{position:absolute;left:0;right:0;bottom:12%;text-align:center;z-index:5;color:#fff;padding:0 1rem}
+.caption h1{font-family:var(--script);font-weight:400;color:#fff;font-size:clamp(2.2rem,5.6vw,4.4rem);line-height:1.25;text-shadow:0 3px 18px rgba(0,0,0,.35)}
+.caption h1 span{display:inline-block;opacity:0;transform:translateY(40px) rotateX(60deg);margin:0 .12em}
+.slide.active .caption h1 span{animation:word .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * .16s + .5s)}
+@keyframes word{to{opacity:1;transform:none}}
+.caption p{font-size:1.15rem;margin:.6rem auto 1.8rem;max-width:620px;opacity:0;transform:translateY(25px)}
+.slide.active .caption p{animation:word 1s ease .5s forwards;animation-delay:1.4s}
+.caption .btn{opacity:0;transform:translateY(25px)}
+.slide.active .caption .btn{animation:word 1s ease forwards;animation-delay:1.8s}
+.btn{display:inline-block;padding:.95rem 2.4rem;background:var(--olive);color:#fff;text-transform:uppercase;letter-spacing:.25em;font-size:.8rem;font-weight:700;border:2px solid var(--olive);cursor:pointer;transition:.35s;font-family:var(--body)}
+.btn:hover{background:transparent;color:var(--olive)}
+.hero .btn:hover{color:#fff;border-color:#fff}
+.btn.dark{background:var(--ink);border-color:var(--ink)}
+.btn.dark:hover{color:var(--ink);background:transparent}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.1);color:#fff;cursor:pointer;font-size:1.4rem;transition:.3s;display:grid;place-items:center}
+.arrow:hover{background:var(--olive);border-color:var(--olive)}
+.arrow.prev{left:2%}.arrow.next{right:6%}
+.dots{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:.6rem}
+.dots button{width:11px;height:11px;border-radius:50%;border:1px solid #fff;background:transparent;cursor:pointer;transition:.3s}
+.dots button.active{background:#fff;transform:scale(1.25)}
+
+/* ===== Side tabs & chat ===== */
+.side-tabs{position:fixed;right:0;top:42%;z-index:300;display:flex;flex-direction:column;gap:2px}
+.side-tabs a{width:84px;height:84px;background:var(--olive);color:#fff;display:grid;place-items:center;font-size:1.9rem;transition:.35s;position:relative}
+.side-tabs a:hover{background:var(--ink);width:104px;margin-left:-20px}
+.side-tabs a span{position:absolute;right:100%;top:50%;transform:translateY(-50%);background:var(--ink);color:#fff;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem .8rem;white-space:nowrap;opacity:0;pointer-events:none;transition:.3s}
+.side-tabs a:hover span{opacity:1;right:calc(100% - 0px)}
+.chat{position:fixed;right:1.6rem;bottom:1.6rem;z-index:300;display:flex;align-items:center;gap:.8rem}
+.chat span{background:#fff;color:#111;font-family:sans-serif;font-weight:700;font-size:.95rem;padding:.8rem 1.1rem;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.18);animation:pop 4s infinite}
+.chat b{width:66px;height:66px;border-radius:50%;background:#2db516;color:#fff;display:grid;place-items:center;font-size:1.8rem;box-shadow:0 6px 20px rgba(45,181,22,.45)}
+@keyframes pop{0%,85%,100%{transform:scale(1)}92%{transform:scale(1.08)}}
+
+/* ===== Sections ===== */
+section.s{padding:6.5rem 0}
+section.s.alt{background:var(--cream)}
+.head{text-align:center;margin-bottom:3.5rem}
+.head .script{color:var(--olive);font-size:1.5rem;display:block;margin-bottom:.3rem}
+.orn{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-top:1rem;color:var(--olive)}
+.orn::before,.orn::after{content:"";width:90px;height:1px;background:var(--beige)}
+.orn i{width:11px;height:11px;background:var(--olive);transform:rotate(45deg);display:block}
+
+/* Image placeholder */
+.ph{background:var(--g,linear-gradient(135deg,#d9cfc3,#a8927f)) center/cover;position:relative;overflow:hidden;width:100%;height:100%;min-height:240px}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(0,0,0,.18))}
+
+/* About */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.frame{position:relative;padding:0 0 22px 22px}
+.frame::before{content:"";position:absolute;inset:22px 22px 0 0;border:2px solid var(--olive);z-index:0}
+.frame .ph{position:relative;z-index:1;min-height:500px}
+.about p{margin-bottom:1.1rem}
+.sign{font-family:var(--script);font-size:1.9rem;color:var(--olive);margin:1rem 0 1.8rem}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.feat{text-align:center;padding:1rem}
+.feat .circle{margin:0 auto 1.3rem;width:84px;height:84px;font-size:2.2rem}
+.feat:hover .circle{background:var(--ink);transform:rotateY(180deg)}
+.feat h3{font-size:1.3rem;margin-bottom:.5rem}
+
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.card{background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.07);transition:.45s}
+.card:hover{transform:translateY(-10px);box-shadow:0 22px 50px rgba(0,0,0,.14)}
+.card .pic{height:260px;overflow:hidden;position:relative}
+.card .pic .ph{height:100%;transition:transform .8s}
+.card:hover .pic .ph{transform:scale(1.12) rotate(1deg)}
+.card .pic::after{content:"";position:absolute;inset:0;background:rgba(160,172,107,.55);opacity:0;transition:.4s}
+.card:hover .pic::after{opacity:1}
+.card .body{padding:2rem 1.8rem 2.2rem;text-align:center}
+.card h3{font-size:1.4rem;margin-bottom:.6rem}
+.more{display:inline-block;margin-top:1rem;color:var(--olive);text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;font-weight:700;border-bottom:1px solid var(--olive);padding-bottom:2px}
+
+/* Counters (parallax) */
+.counters{background:linear-gradient(rgba(40,38,36,.72),rgba(40,38,36,.72)),var(--hero2) center/cover fixed;color:#fff;padding:5.5rem 0;text-align:center}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.cgrid b{display:block;font-family:var(--head);font-size:3.4rem;color:#fff}
+.cgrid b em{color:var(--olive);font-style:normal}
+.cgrid span{text-transform:uppercase;letter-spacing:.25em;font-size:.8rem}
+
+/* Gallery */
+.filters{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filters button{background:none;border:0;border-bottom:2px solid transparent;font-family:var(--body);text-transform:uppercase;letter-spacing:.22em;font-weight:700;font-size:.82rem;padding:.5rem 1.1rem;cursor:pointer;color:var(--taupe);transition:.3s}
+.filters button:hover,.filters button.active{color:var(--olive);border-color:var(--olive)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.g{position:relative;overflow:hidden;aspect-ratio:1/1.08;animation:zin .6s}
+.g.hide{display:none}
+@keyframes zin{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+.g .ph{transition:transform .8s;height:100%}
+.g:hover .ph{transform:scale(1.15)}
+.g figcaption{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.85);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(134,147,90,.82);opacity:0;transform:scale(1.15);transition:.45s}
+.g:hover figcaption{opacity:1;transform:none}
+.g figcaption h4{color:#fff;font-size:1.25rem}
+.g figcaption span{font-family:var(--script);font-size:1.05rem}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem}
+.member{text-align:center}
+.member .pic{position:relative;overflow:hidden;border-radius:50%;width:260px;height:260px;margin:0 auto 1.4rem;border:6px solid #fff;box-shadow:0 0 0 2px var(--beige)}
+.member .ph{height:100%;transition:transform .7s}
+.member:hover .ph{transform:scale(1.12)}
+.member .soc{position:absolute;inset:auto 0 0 0;background:rgba(160,172,107,.9);display:flex;justify-content:center;gap:1rem;padding:.8rem;transform:translateY(100%);transition:.4s;color:#fff;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase}
+.member:hover .soc{transform:none}
+.member h3{font-size:1.35rem}
+.member .role{font-family:var(--script);color:var(--olive);font-size:1.1rem}
+
+/* Blog */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.post{background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.07)}
+.post .pic{height:230px;overflow:hidden;position:relative}
+.post .ph{height:100%;transition:transform .8s}
+.post:hover .ph{transform:scale(1.1)}
+.post .date{position:absolute;left:1rem;top:1rem;background:var(--olive);color:#fff;text-align:center;padding:.4rem .8rem;z-index:2;font-family:var(--head);line-height:1.15}
+.post .date small{display:block;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;font-family:var(--body)}
+.post .body{padding:1.6rem}
+.post h3{font-size:1.2rem;margin-bottom:.5rem}
+
+/* Testimonials */
+.testi{max-width:780px;margin:auto;text-align:center;min-height:250px}
+.q{display:none}
+.q.active{display:block;animation:fadeup .9s}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.q p{font-family:var(--script);font-size:1.6rem;line-height:1.6;color:var(--ink);margin-bottom:1.2rem}
+.q h4{font-size:1.1rem}
+.q span{color:var(--olive);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+.tnav{display:flex;justify-content:center;gap:.6rem;margin-top:1.6rem}
+.tnav button{width:12px;height:12px;border-radius:50%;border:1px solid var(--olive);background:none;cursor:pointer;transition:.3s}
+.tnav button.active{background:var(--olive);transform:scale(1.25)}
+
+/* Contacts */
+.cgrid2{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem}
+.clist li{display:flex;gap:1rem;align-items:center;margin-bottom:1.3rem}
+.clist .circle{width:52px;height:52px;font-size:1.3rem}
+.clist a:hover{color:var(--olive)}
+.form{background:#fff;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,.08)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.form label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;font-weight:700;margin-bottom:1.1rem;color:var(--ink)}
+.form input,.form select,.form textarea{width:100%;margin-top:.35rem;padding:.7rem 0;border:0;border-bottom:1px solid #d9d2ca;background:transparent;font:inherit;font-size:1rem;outline:none;transition:.3s;color:var(--text)}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--olive)}
+.form .error{border-color:#c0392b}
+.fmsg{margin-top:1rem;color:var(--olive-dark);font-size:.95rem}
+
+/* Footer */
+footer{background:#3b3836;color:#bdb4ac;text-align:center;padding:4rem 0 0}
+footer .logo .l1{color:#fff}
+footer .logo .l2,footer .logo .l1 i{color:var(--beige)}
+.fnav{display:flex;justify-content:center;flex-wrap:wrap;gap:1.8rem;margin:1.8rem 0}
+.fnav a{text-transform:uppercase;letter-spacing:.25em;font-size:.8rem;font-weight:700;transition:.3s}
+.fnav a:hover{color:var(--olive)}
+.copy{border-top:1px solid #4d4946;margin-top:2.5rem;padding:1.4rem;font-size:.9rem}
+
+.totop{position:fixed;left:1.4rem;bottom:1.4rem;width:48px;height:48px;border-radius:50%;background:var(--olive);color:#fff;border:0;cursor:pointer;font-size:1.3rem;opacity:0;visibility:hidden;transition:.3s;z-index:290}
+.totop.show{opacity:1;visibility:visible}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.rv.l{transform:translateX(-50px)}.rv.r{transform:translateX(50px)}
+.rv.in{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1100px){
+  .nav{gap:1.5rem}.nav a{font-size:.8rem;letter-spacing:.2em}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .side-tabs a{width:56px;height:56px;font-size:1.4rem}
+  .top-grid{grid-template-columns:1fr}
+  .info-box{display:none}
+  .burger{display:block}
+  .nav{display:none;flex-direction:column;align-items:center;gap:1.2rem;padding:1rem 0 1.6rem}
+  .nav.open{display:flex}
+  .two,.cgrid2{grid-template-columns:1fr;gap:3rem}
+  .cards,.team,.posts{grid-template-columns:1fr 1fr}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .arrow{display:none}
+}
+@media(max-width:600px){
+  section.s{padding:4.5rem 0}
+  .cards,.team,.posts,.features,.row{grid-template-columns:1fr}
+  .side-tabs{display:none}
+  .chat span{display:none}
+  .form{padding:1.5rem}
+  .q p{font-size:1.3rem}
+  .frame .ph{min-height:360px}
+  .counters{background-attachment:scroll}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv,.caption h1 span,.caption p,.caption .btn{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icons -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></symbol>
+  <symbol id="i-win" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-ring" viewBox="0 0 24 24"><circle cx="12" cy="15" r="6"/><path d="M9 4l3 3 3-3-1.5-1.5h-3z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0zM12 14v7M8 21h8"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+</svg>
+
+<div id="preloader"><div class="heart"></div></div>
+
+<!-- Header -->
+<header id="home">
+  <div class="topbar">
+    <div class="container top-grid">
+      <div class="info-box left">
+        <div class="txt"><small>Call Us</small><b><a href="tel:+2340000000000">+234 000 000 0000</a></b></div>
+        <a class="circle" href="tel:+2340000000000" aria-label="Call"><svg class="i"><use href="#i-phone"/></svg></a>
+      </div>
+      <a href="#home" class="logo">
+        <div class="l1">KENNYMOORE<i> events</i></div>
+        <svg viewBox="0 0 190 26" fill="none"><g stroke="#a0ac6b" stroke-width="1.2" stroke-linecap="round"><path d="M4 13h70M116 13h70"/><path d="M14 13c4-7 9-7 12-2M30 13c4 6 9 6 12 1M48 13c4-7 9-7 12-2M130 13c4-7 9-7 12-2M146 13c4 6 9 6 12 1M164 13c4-7 9-7 12-2"/></g><circle cx="95" cy="13" r="11" fill="#a0ac6b"/><path d="M95 19s-6-3.5-6-8a3.2 3.2 0 0 1 6-1.5A3.2 3.2 0 0 1 101 11c0 4.500-6 8-6 8z" fill="#fff"/></svg>
+        <div class="l2">Wedding Planner</div>
+      </a>
+      <div class="info-box right">
+        <a class="circle" href="#contact" aria-label="Book"><svg class="i"><use href="#i-cal"/></svg></a>
+        <div class="txt"><small>Based in Lagos:</small><b>Available to travel</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-placeholder" id="navPh"></div>
+  <div class="navbar" id="navbar">
+    <button class="burger" id="burger">&#9776; Menu</button>
+    <nav class="nav container" id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#team">Team</a>
+      <a href="#services">Services</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contacts</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="slide active">
+    <div class="bg"></div>
+    <div class="caption">
+      <h1 data-split>We'll Make Your Wedding Perfect</h1>
+      <p>Exclusive events, priceless memories — planned with love in Lagos.</p>
+      <a href="#contact" class="btn">Book Your Date</a>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="bg"></div>
+    <div class="caption">
+      <h1 data-split>Every Detail, Beautifully Done</h1>
+      <p>Weddings, social celebrations and corporate events with a personal touch.</p>
+      <a href="#services" class="btn">Our Services</a>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="bg"></div>
+    <div class="caption">
+      <h1 data-split>Your Love Story Starts Here</h1>
+      <p>From the first idea to the last dance — we handle it all.</p>
+      <a href="#gallery" class="btn">View Our Work</a>
+    </div>
+  </div>
+  <button class="arrow prev" id="prev" aria-label="Previous">&#8592;</button>
+  <button class="arrow next" id="next" aria-label="Next">&#8594;</button>
+  <div class="dots" id="dots"></div>
+</section>
+
+<!-- About -->
+<section class="s about" id="about">
+  <div class="container two">
+    <div class="frame rv l"><div class="ph" style="--g:linear-gradient(160deg,#d8cdbf,#8c7a68)"></div></div>
+    <div class="rv r">
+      <span class="script" style="color:var(--olive);font-size:1.5rem">Welcome to</span>
+      <h2>KennyMoore Events</h2>
+      <div class="orn" style="justify-content:flex-start"><i></i><span style="width:90px;height:1px;background:var(--beige)"></span></div>
+      <p style="margin-top:1.5rem">KennyMoore Events is a Lagos-based planning and management company dedicated to crafting elegant, seamless and deeply personal celebrations. From intimate traditional engagements to grand white weddings and polished corporate galas, every detail is designed with intention.</p>
+      <p>We take care of concept, décor, vendors, timelines and day-of coordination — so you can be fully present for the moments that matter.</p>
+      <div class="sign">Kenny Moore</div>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="s alt" id="features">
+  <div class="container">
+    <div class="head rv"><span class="script">Why choose us</span><h2>Our Features</h2><div class="orn"><i></i></div></div>
+    <div class="features">
+      <div class="feat rv"><div class="circle"><svg class="i"><use href="#i-heart"/></svg></div><h3>Personal Touch</h3><p>Every event is shaped around your story and style.</p></div>
+      <div class="feat rv"><div class="circle"><svg class="i"><use href="#i-star"/></svg></div><h3>Premium Vendors</h3><p>A trusted network of décor, catering and entertainment experts.</p></div>
+      <div class="feat rv"><div class="circle"><svg class="i"><use href="#i-cal"/></svg></div><h3>Flawless Timing</h3><p>Detailed timelines and day-of coordination, start to finish.</p></div>
+      <div class="feat rv"><div class="circle"><svg class="i"><use href="#i-pin"/></svg></div><h3>We Travel</h3><p>Based in Lagos and available for destination events.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="s" id="services">
+  <div class="container">
+    <div class="head rv"><span class="script">What we do</span><h2>Our Services</h2><div class="orn"><i></i></div></div>
+    <div class="cards">
+      <article class="card rv"><div class="pic"><div class="ph" style="--g:linear-gradient(135deg,#e6dccf,#b79f88)"></div></div><div class="body"><h3>Weddings</h3><p>Traditional, white and destination weddings planned from first idea to last dance.</p><a class="more" href="#contact">Enquire</a></div></article>
+      <article class="card rv"><div class="pic"><div class="ph" style="--g:linear-gradient(135deg,#dfe3cc,#9aa77a)"></div></div><div class="body"><h3>Social Events</h3><p>Engagements, birthdays, anniversaries and private dinners with an elegant touch.</p><a class="more" href="#contact">Enquire</a></div></article>
+      <article class="card rv"><div class="pic"><div class="ph" style="--g:linear-gradient(135deg,#d6d3d0,#6f6a66)"></div></div><div class="body"><h3>Corporate Events</h3><p>Launches, conferences, awards nights and brand activations delivered with precision.</p><a class="more" href="#contact">Enquire</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- Counters -->
+<section class="counters">
+  <div class="container cgrid">
+    <div class="rv"><b><span data-count="350">0</span><em>+</em></b><span>Events Planned</span></div>
+    <div class="rv"><b><span data-count="12">0</span><em>+</em></b><span>Years Experience</span></div>
+    <div class="rv"><b><span data-count="3000">0</span><em>+</em></b><span>Guests Hosted</span></div>
+    <div class="rv"><b><span data-count="100">0</span><em>%</em></b><span>Happy Couples</span></div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="s" id="gallery">
+  <div class="container">
+    <div class="head rv"><span class="script">Our portfolio</span><h2>Recent Celebrations</h2><div class="orn"><i></i></div></div>
+    <div class="filters rv" id="filters">
+      <button class="active" data-f="all">All</button><button data-f="wedding">Weddings</button><button data-f="social">Social</button><button data-f="corporate">Corporate</button>
+    </div>
+    <div class="gallery" id="galleryGrid">
+      <figure class="g wedding"><div class="ph" style="--g:linear-gradient(135deg,#e6dccf,#a8927f)"></div><figcaption><h4>Zaya &amp; Partner</h4><span>Wedding</span></figcaption></figure>
+      <figure class="g wedding"><div class="ph" style="--g:linear-gradient(135deg,#d8d2c6,#7e8a5e)"></div><figcaption><h4>#iDO2025</h4><span>Wedding</span></figcaption></figure>
+      <figure class="g corporate"><div class="ph" style="--g:linear-gradient(135deg,#c9d3dd,#4a6a8a)"></div><figcaption><h4>Kuramo Summit</h4><span>Corporate</span></figcaption></figure>
+      <figure class="g social"><div class="ph" style="--g:linear-gradient(135deg,#e9c9a8,#a3523a)"></div><figcaption><h4>Sunset Rooftop</h4><span>Social</span></figcaption></figure>
+      <figure class="g wedding"><div class="ph" style="--g:linear-gradient(135deg,#f3ece0,#cdb8a3)"></div><figcaption><h4>Ivory Draping</h4><span>Wedding</span></figcaption></figure>
+      <figure class="g corporate"><div class="ph" style="--g:linear-gradient(135deg,#bfc4c9,#4a5560)"></div><figcaption><h4>2X Ignite</h4><span>Corporate</span></figcaption></figure>
+      <figure class="g social"><div class="ph" style="--g:linear-gradient(135deg,#dbe6cf,#7f9a63)"></div><figcaption><h4>Garden Engagement</h4><span>Social</span></figcaption></figure>
+      <figure class="g wedding"><div class="ph" style="--g:linear-gradient(135deg,#efd5d9,#b5707f)"></div><figcaption><h4>Blush Evening</h4><span>Wedding</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="s alt" id="team">
+  <div class="container">
+    <div class="head rv"><span class="script">Meet the people</span><h2>Our Team</h2><div class="orn"><i></i></div></div>
+    <div class="team">
+      <div class="member rv"><div class="pic"><div class="ph" style="--g:linear-gradient(160deg,#d8cdbf,#8c7a68)"></div><div class="soc">Instagram</div></div><h3>Kenny Moore</h3><div class="role">Lead Planner</div></div>
+      <div class="member rv"><div class="pic"><div class="ph" style="--g:linear-gradient(160deg,#dfe3cc,#8a9a65)"></div><div class="soc">Instagram</div></div><h3>Team Member</h3><div class="role">Décor Director</div></div>
+      <div class="member rv"><div class="pic"><div class="ph" style="--g:linear-gradient(160deg,#e6d6d6,#a97a7a)"></div><div class="soc">Instagram</div></div><h3>Team Member</h3><div class="role">Event Coordinator</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="s" id="blog">
+  <div class="container">
+    <div class="head rv"><span class="script">From the journal</span><h2>Latest Stories</h2><div class="orn"><i></i></div></div>
+    <div class="posts">
+      <article class="post rv"><div class="pic"><div class="date">12<small>Oct</small></div><div class="ph" style="--g:linear-gradient(135deg,#e6dccf,#b79f88)"></div></div><div class="body"><h3>5 Tips for Planning a Lagos Wedding</h3><p>Start early, set the budget and lock in your venue first.</p><a class="more" href="#contact">Read more</a></div></article>
+      <article class="post rv"><div class="pic"><div class="date">28<small>Sep</small></div><div class="ph" style="--g:linear-gradient(135deg,#dfe3cc,#9aa77a)"></div></div><div class="body"><h3>Décor Trends for 2026</h3><p>Soft drapes, lush florals and warm lighting are in.</p><a class="more" href="#contact">Read more</a></div></article>
+      <article class="post rv"><div class="pic"><div class="date">05<small>Sep</small></div><div class="ph" style="--g:linear-gradient(135deg,#d6d3d0,#6f6a66)"></div></div><div class="body"><h3>Hosting a Standout Corporate Event</h3><p>How to make launches and summits memorable.</p><a class="more" href="#contact">Read more</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="s alt" id="testimonials">
+  <div class="container">
+    <div class="head rv"><span class="script">Kind words</span><h2>Happy Couples</h2><div class="orn"><i></i></div></div>
+    <div class="testi rv">
+      <div class="q active"><p>“KennyMoore Events made our wedding feel like a fairytale. Every detail was perfect and we didn't have to worry about a thing.”</p><h4>Amaka &amp; Tunde</h4><span>Wedding, Lagos</span></div>
+      <div class="q"><p>“Professional, creative and calm under pressure. Our corporate launch was the talk of the town.”</p><h4>Ngozi A.</h4><span>Corporate Client</span></div>
+      <div class="q"><p>“From décor to coordination, the team went above and beyond. Truly priceless memories.”</p><h4>Zainab &amp; Femi</h4><span>Engagement</span></div>
+      <div class="tnav" id="tnav"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="s" id="contact">
+  <div class="container cgrid2">
+    <div class="rv l">
+      <span class="script" style="color:var(--olive);font-size:1.5rem">Get in touch</span>
+      <h2>Let's plan your perfect day</h2>
+      <p style="margin:1rem 0 2rem">Tell us about your event and we'll get back to you within 24 hours.</p>
+      <ul class="clist">
+        <li><span class="circle"><svg class="i"><use href="#i-pin"/></svg></span><span>Lagos, Nigeria — available to travel</span></li>
+        <li><span class="circle"><svg class="i"><use href="#i-phone"/></svg></span><a href="tel:+2340000000000">+234 000 000 0000</a></li>
+        <li><span class="circle"><svg class="i"><use href="#i-mail"/></svg></span><a href="mailto:hello@kennymoreevents.com">hello@kennymoreevents.com</a></li>
+        <li><span class="circle"><svg class="i"><use href="#i-img"/></svg></span><a href="https://www.instagram.com/kennymoorevents/" target="_blank" rel="noopener">@kennymoorevents</a></li>
+      </ul>
+    </div>
+    <form class="form rv r" id="form" novalidate>
+      <div class="row"><label>Your Name<input type="text" name="name" required></label><label>Phone<input type="tel" name="phone" required></label></div>
+      <div class="row"><label>Email<input type="email" name="email" required></label>
+        <label>Event Type<select name="type" required><option value="">Select…</option><option>Wedding</option><option>Social Event</option><option>Corporate Event</option><option>Décor Only</option></select></label></div>
+      <div class="row"><label>Event Date<input type="date" name="date"></label><label>Estimated Guests<input type="number" min="1" name="guests"></label></div>
+      <label>Message<textarea name="message" rows="4"></textarea></label>
+      <button class="btn" type="submit">Send via WhatsApp</button>
+      <p class="fmsg" id="fmsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="#home" class="logo">
+      <div class="l1">KENNYMOORE<i> events</i></div>
+      <div class="l2">Exclusive Events, Priceless Memories</div>
+    </a>
+    <div class="fnav"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#team">Team</a><a href="#blog">Blog</a><a href="#contact">Contacts</a></div>
+  </div>
+  <div class="copy">© <span id="yr"></span> KennyMoore Events. All rights reserved.</div>
+</footer>
+
+<!-- Floating side tabs + chat -->
+<div class="side-tabs">
+  <a href="#contact"><span>Book</span><svg class="i"><use href="#i-cal"/></svg></a>
+  <a href="#gallery"><span>Gallery</span><svg class="i"><use href="#i-img"/></svg></a>
+  <a href="#services"><span>Services</span><svg class="i"><use href="#i-win"/></svg></a>
+</div>
+<a class="chat" id="chat" href="#" target="_blank" rel="noopener"><span>Chat with us!</span><b><svg class="i"><use href="#i-chat"/></svg></b></a>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  'use strict';
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* ===== EDIT THIS: WhatsApp number with country code, no + or spaces ===== */
+  var WA='2340000000000';
+  $('#chat').href='https://wa.me/'+WA;
+
+  /* Preloader */
+  window.addEventListener('load',function(){setTimeout(function(){$('#preloader').classList.add('done')},500)});
+  setTimeout(function(){$('#preloader').classList.add('done')},3000);
+
+  /* Sticky nav */
+  var nb=$('#navbar'),ph=$('#navPh'),navTop=0;
+  function measure(){navTop=nb.classList.contains('stuck')?navTop:nb.getBoundingClientRect().top+window.scrollY}
+  measure();window.addEventListener('resize',measure);window.addEventListener('load',measure);
+  function onScroll(){
+    var y=window.scrollY;
+    var s=y>navTop;
+    if(s!==nb.classList.contains('stuck')){
+      nb.classList.toggle('stuck',s);
+      ph.style.display=s?'block':'none';
+      ph.style.height=s?nb.offsetHeight+'px':'0';
+    }
+    $('#totop').classList.toggle('show',y>700);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  $('#totop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+
+  /* Mobile menu */
+  $('#burger').onclick=function(){$('#nav').classList.toggle('open')};
+  $$('#nav a').forEach(function(a){a.addEventListener('click',function(){$('#nav').classList.remove('open')})});
+
+  /* Offset anchor scroll for sticky nav */
+  $$('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');if(id.length<2)return;
+      var t=$(id);if(!t)return;e.preventDefault();
+      var off=id==='#home'?0:nb.offsetHeight-2;
+      window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});
+    });
+  });
+
+  /* Scrollspy */
+  var links=$$('#nav a');
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)})}
+    })},{rootMargin:'-40% 0px -55% 0px'});
+    ['home','about','features','gallery','team','services','blog','contact'].forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el)});
+  }
+
+  /* Split hero titles into animated words */
+  $$('[data-split]').forEach(function(h){
+    var words=h.textContent.trim().split(/\s+/);
+    h.innerHTML=words.map(function(w,i){return '<span style="--i:'+i+'">'+w+'</span>'}).join(' ');
+  });
+
+  /* Hero slider */
+  var slides=$$('.slide'),dotsEl=$('#dots'),cur=0,t;
+  slides.forEach(function(_,i){var b=document.createElement('button');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=function(){go(i);auto()};dotsEl.appendChild(b)});
+  var dots=$$('button',dotsEl);dots[0].classList.add('active');
+  function go(i){
+    slides[cur].classList.remove('active');dots[cur].classList.remove('active');
+    cur=(i+slides.length)%slides.length;
+    slides[cur].classList.add('active');dots[cur].classList.add('active');
+  }
+  function auto(){clearInterval(t);t=setInterval(function(){go(cur+1)},7000)}
+  $('#next').onclick=function(){go(cur+1);auto()};
+  $('#prev').onclick=function(){go(cur-1);auto()};
+  auto();
+
+  /* Reveal on scroll */
+  var rv=$$('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    rv.forEach(function(el,i){el.style.transitionDelay=(i%3)*120+'ms';io.observe(el)});
+  }else{rv.forEach(function(el){el.classList.add('in')})}
+
+  /* Counters */
+  var done=false;
+  function count(){
+    if(done)return;done=true;
+    $$('[data-count]').forEach(function(el){
+      var to=+el.dataset.count,st=null;
+      (function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/1800,1);el.textContent=Math.floor(p*to).toLocaleString();if(p<1)requestAnimationFrame(step)})(performance.now());
+    });
+  }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e,o){if(e[0].isIntersecting){count();o.disconnect()}},{threshold:.4}).observe($('.counters'));
+  }else count();
+
+  /* Gallery filter */
+  var fb=$$('#filters button'),gi=$$('#galleryGrid .g');
+  fb.forEach(function(b){b.onclick=function(){
+    fb.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
+    gi.forEach(function(g){
+      var show=b.dataset.f==='all'||g.classList.contains(b.dataset.f);
+      g.classList.toggle('hide',!show);
+      if(show){g.style.animation='none';void g.offsetWidth;g.style.animation=''}
+    });
+  }});
+
+  /* Testimonials */
+  var qs=$$('.q'),tn=$('#tnav'),qi=0,qt;
+  qs.forEach(function(_,i){var b=document.createElement('button');b.setAttribute('aria-label','Testimonial '+(i+1));b.onclick=function(){showQ(i);qAuto()};tn.appendChild(b)});
+  var tb=$$('button',tn);tb[0].classList.add('active');
+  function showQ(i){qs[qi].classList.remove('active');tb[qi].classList.remove('active');qi=i;qs[qi].classList.add('active');tb[qi].classList.add('active')}
+  function qAuto(){clearInterval(qt);qt=setInterval(function(){showQ((qi+1)%qs.length)},7000)}
+  qAuto();
+
+  /* Contact form -> WhatsApp */
+  var form=$('#form'),msg=$('#fmsg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();var ok=true;
+    $$('[required]',form).forEach(function(f){
+      var bad=!f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value));
+      f.classList.toggle('error',bad);if(bad)ok=false;
+    });
+    if(!ok){msg.textContent='Please fill in all required fields correctly.';return}
+    var d=new FormData(form),E=encodeURIComponent;
+    var text='Hello KennyMoore Events,%0AName: '+E(d.get('name'))+'%0APhone: '+E(d.get('phone'))+'%0AEmail: '+E(d.get('email'))+'%0AEvent: '+E(d.get('type'))+'%0ADate: '+E(d.get('date')||'TBD')+'%0AGuests: '+E(d.get('guests')||'TBD')+'%0AMessage: '+E(d.get('message')||'-');
+    msg.textContent='Opening WhatsApp…';
+    window.open('https://wa.me/'+WA+'?text='+text,'_blank','noopener');
+    form.reset();
+  });
+
+  $('#yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
